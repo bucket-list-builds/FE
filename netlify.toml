@@ -1,0 +1,4 @@
+[build]
+base = "how-to/"
+publish = "how-to/build/"
+command = "yarn build"
