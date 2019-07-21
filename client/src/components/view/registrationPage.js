@@ -3,16 +3,13 @@ import axios from 'axios';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// import './SASS/index.scss';
-
-
 class RegistrationPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
             username: '',
             password: '',
-            // hasAgreed: false
+            
 
         }
 
@@ -30,13 +27,7 @@ class RegistrationPage extends Component {
             [name]: value
         })
     }
-    // handleSubmit(event) {
-    //     event.preventDefault();
-
-    //     console.log('The form was submitted with the following data:')
-    //     console.log(this.state);
-    // }
-
+    
     handleSubmit = event => {
         event.preventDefault();
         axios.post('https://bucketlist-builds.herokuapp.com/api/auth/register', this.state)
@@ -80,17 +71,7 @@ class RegistrationPage extends Component {
                         />
                         
                     </div>
-                    {/* <div>
-                        <label>
-                            <input 
-                                type="checkbox" 
-                                name="hasAgreed"
-                                value={this.state.hasAgreed} 
-                                onChange={this.handleChange}
-                            />
-                            I agree to no terms of agreement.
-                        </label>
-                    </div> */}
+                
                     <div>
                         <button>Sign Up</button>
 
