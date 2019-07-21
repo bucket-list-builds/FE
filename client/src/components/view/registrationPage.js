@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-
+import "./registrationPage.scss"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class RegistrationPage extends Component {
@@ -46,11 +46,11 @@ class RegistrationPage extends Component {
 
     render() {
         return (
-            <div>
-                <p>To sign up, please enter a user name, password, and accept the terms of condtion.</p>
+            <div className="form-styles">
+                <p>To sign up, please enter a user name and password</p>
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                        <label>User Name</label>
+                        {/* <label>User Name</label> */}
                         <input 
                             type = "text" 
                             placeholder="Enter a User Name here"
@@ -61,7 +61,7 @@ class RegistrationPage extends Component {
 
                     </div>
                     <div>
-                        <label>Password</label>
+                        {/* <label>Password</label> */}
                         <input 
                             type = "password" 
                             placeholder="Enter a Password here"
