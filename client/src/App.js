@@ -7,6 +7,7 @@ import "./App.scss";
 import LoginPage from "./components/view/loginPage";
 import RegistrationPage from "./components/view/registrationPage";
 import { Route, withRouter } from "react-router-dom";
+import Landing from "./components/view/Landing.js";
 import Axios from "axios";
 
 class App extends Component {
@@ -77,7 +78,7 @@ class App extends Component {
 
   onRegister = e => {
     e.preventDefault();
-    this.props.history.push("register");
+    this.props.history.push("/register");
   };
 
   render() {
@@ -85,10 +86,12 @@ class App extends Component {
       <div className="App">
         <Navigation isLoggedIn={this.state.isLoggedIn} />
 
-        <div>
-          <button onClick={this.onLogin}>Log In</button>
-          <button onClick={this.onRegister}>Register</button>
-        </div>
+        <Route
+          path="/"
+          render={props => (
+            <Landing onLogin={this.onLogin} onRegister={this.onRegister} />
+          )}
+        />
 
         <Route path="/" render={props => <LogOut {...props} />} />
         <Route exact path="/login" render={props => <LoginPage {...props} />} />
