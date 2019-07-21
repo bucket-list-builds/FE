@@ -24,7 +24,7 @@ const ItemList = props => {
     <CardGroup className="fader">
       {props.bucketListID.map(item => {
         return (
-          <div>
+          <div className="card-items">
           <span className='faded'>
           <Item
             listItemTitle={item.title}
