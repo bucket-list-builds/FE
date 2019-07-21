@@ -8,7 +8,7 @@ function Landing(props) {
         <h1>Welcome to BuckList!!</h1>
         <div className="main-content-box">
           <div>
-            <p>As the name suggests, this is a website to create Bucket List to help you accomplish your goals in life before, well, you kick the bucket.</p>
+            <p>As the name suggests, this is a website to create a Bucket List to help you accomplish your goals in life before, well, you kick the bucket.</p>
           </div>
           
           <div>

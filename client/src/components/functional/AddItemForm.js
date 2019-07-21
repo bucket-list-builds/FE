@@ -60,19 +60,19 @@ export default class AddItemForm extends React.Component {
 
   render() {
     return (
-      <Form>
+      <Form className="form-item">
         <FormGroup>
-          <Label for="title">Title</Label>
+          <Label className="form-label-item" for="title">Title of your Buck List item</Label>
           <Input type="text" name="title" value={this.state.bucket.title} id="itemTitle" placeholder="Enter a title for your Todo" onChange={this.handleInputChange} />
         </FormGroup>
         <FormGroup>
-          <Label for="description">Describe your bucket list item</Label>
+          <Label className="form-label-item" for="description">Describe your bucket list item</Label>
           <Input type="textarea" name="description" value={this.state.bucket.description} id="description" onChange={this.handleInputChange} />
         </FormGroup>
         <FormGroup>
-          <Label for="exampleFile">File</Label>
-          <Input type="file" name="file" id="exampleFile" />
-          <FormText color="muted">
+          <Label className="form-label-item" for="exampleFile">Want to upload a picture?</Label>
+          <Input className="form-input-file-item" type="file" name="file" id="exampleFile" />
+          <FormText className="form-text" color="black">
           Upload a photo to describe your bucket list item!
           </FormText>
         </FormGroup>
