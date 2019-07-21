@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+
+
 class LoginPage extends Component {
   constructor(props) {
     super(props);
@@ -59,24 +61,24 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <div className="Login">
+      <div className="form-styles">
         <form onSubmit={this.handleSubmit}>
         
-          <label>User Name</label>
+          <label>User Name:</label>
           <input
             type="text"
             data-test="username"
             value={this.state.username}
             onChange={this.handleUserChange}
           />
-          <label>Password</label>
+          <label className="password-login">Password:</label>
           <input
             type="password"
             data-test="password"
             value={this.state.password}
             onChange={this.handlePassChange}
           />
-          <input type="submit" value="Log In" data-test="submit" />
+          <button type="submit" value="Log In" data-test="submit" > Log In </button>
         </form>
       </div>
     );
