@@ -5,20 +5,7 @@ import Axios from 'axios';
 
 
 const ItemList = props => {
-  // const id = Number(props.match.params.id);
-  // const card = props.bucketListID.find(card => {
-  //   return card.id === id;
-  // })
 
-  // const deleteCard = event  => {
-  //   Axios
-  //     .delete(`https://bucketlist-builds.herokuapp.com/home/${card.id}`)
-  //     .then(res => {
-  //       props.updateBucket(res.data);
-  //       props.history.push('/bucketlist')
-  //     })
-  //     .catch(err => console.log(err));
-  // }
 
   return (
     <CardGroup className="fader">
@@ -41,7 +28,6 @@ const ItemList = props => {
             updateBucket = {props.updateBucket}
           />
           </span>
-          {/* <button onClick={deleteCard}>Done</button> */}
           </div>
         );
       })}

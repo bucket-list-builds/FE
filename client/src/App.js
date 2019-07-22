@@ -101,7 +101,6 @@ class App extends Component {
         />
 
         <Route
-          // exact path='/users/:id/bucketlist'
           exact
           path="/bucketlist"
           render={props => (
@@ -111,9 +110,6 @@ class App extends Component {
               bucketListID={this.state.bucketListID}
               user_id={this.state.user_id}
               updateBucket={this.updateBucket}
-              // completionToggle={this.toggleHandler}
-              // isOwner={this.state.isOwner}
-              // getData = {this.getData}
             />
           )}
         />
@@ -126,10 +122,6 @@ class App extends Component {
               bucketList={this.state.bucketList}
               updateBucket={this.updateBucket}
               user_id={this.state.user_id}
-              // completionToggle={this.toggleHandler}
-              // isOwner={this.state.isOwner}
-              // getData = {this.getData}
-              // addNewItem = {this.addNewItem}
             />
           )}
         />
@@ -138,52 +130,5 @@ class App extends Component {
   }
 }
 
-// goBackWithID = (childData) => {
-//   console.log('childData', childData)
-//   this.props.history.push(`/users/3/bucketlist`)
-// }
-
-// addNewItem = (event) => {
-//   event.preventDefault();
-//   console.log(this.state.user_id)
-//     Axios
-//       .post(`https://buckitlist-backend.herokuapp.com/users/3/bucketlist`, {title: this.state.itemTitle, description: this.state.itemText}
-//       )
-//       .then(res => this.goBackWithID() )
-//       .catch(err => console.log('Post Error on Add New Item', err));
-
-// };
-
-// toggleHandler = event => {
-//   const toggledArray = [...this.state.bucketList];
-//   let position = null;
-
-//   const target = toggledArray.find((cur, index) => {
-//     position = index;
-//     return (
-//       cur.id === Number.parseInt(event.target.getAttribute('data-key'), 10)
-//     );
-//   });
-
-//   target.completed === false
-//     ? (target.completed = true)
-//     : (target.completed = false);
-
-//   toggledArray[position] = target;
-
-//   this.setState({ bucketList: toggledArray });
-// };
-
-// signIn = (username, password, event) => {
-//   event.preventDefault();
-//   const result = this.state.users.find(user => {
-//     if (user.username === username) {
-//       console.log('User found!');
-//     }
-//     else {
-//       console.log('User not found!');
-//     }
-//   });
-// }
 
 export default withRouter(App);
