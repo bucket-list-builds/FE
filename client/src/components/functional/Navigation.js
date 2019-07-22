@@ -42,7 +42,7 @@ class Navigation extends Component {
   };
   render() {
     return (
-      <Navbar color='light' light expand='md'>
+      <Navbar  color='light' light expand='md'>
         <NavbarBrand href='/'>BucketList</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
