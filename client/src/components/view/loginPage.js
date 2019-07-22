@@ -34,7 +34,7 @@ class LoginPage extends Component {
         this.props.history.push("/bucketlist");
         setTimeout(() => {
           window.location.reload();
-        }, 0);
+        }, 100);
 
         console.log(res.data.user_id);
       })
