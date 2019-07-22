@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { Route, withRouter } from "react-router-dom";
 import { NavLink } from 'react-router-dom';
+import "./Navigation.scss"
+
 import {
   Collapse,
   Navbar,
@@ -23,6 +26,17 @@ class Navigation extends Component {
     };
   }
 
+  handleLogout = (event) => {
+    event.preventDefault();
+
+    localStorage.removeItem('jwt');
+    localStorage.removeItem('user_id')
+    this.props.history.push('/login')
+    setTimeout(() => {
+      window.location.reload();
+    }, 0);
+  }
+
   toggle = () => {
     this.setState({
       isOpen: !this.state.isOpen
@@ -35,6 +49,17 @@ class Navigation extends Component {
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className='ml-auto' navbar>
+
+          <div className={this.props.user_id ? "none" : 'display'}>
+          <NavItem>
+              <NavLink to='/register'>Register</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink to='/login'>Login</NavLink>
+            </NavItem>
+            </div>
+
+            <div className={this.props.user_id ? "" : 'none'}>
             <NavItem>
               <NavLink to='/bucketlist'>BucketList</NavLink>
             </NavItem>
@@ -43,8 +68,10 @@ class Navigation extends Component {
               <NavLink to='/bucketlist/item-form'>Add Item</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to='/register'>Register</NavLink>
+              <NavLink onClick={this.handleLogout}>Logout</NavLink>
             </NavItem>
+            </div>
+          
             {this.props.isLoggedIn && (
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
@@ -74,4 +101,4 @@ class Navigation extends Component {
   }
 }
 
-export default Navigation;
+export default withRouter(Navigation);

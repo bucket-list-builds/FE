@@ -13,7 +13,7 @@ function Item(props) {
       .then(res => {
         props.updateBucket(res.data);
         props.history.push('/bucketlist')
-      })
+      }) 
       .catch(err => console.log(err));
   }
 
@@ -21,17 +21,17 @@ function Item(props) {
 
 
   return ( 
-  <div>
-    <Card className="card-item" >
-      <CardImg top width="100%" src="../../static/images" alt="Card image cap" />
-      <CardBody>
-        <CardTitle>{props.listItemTitle}</CardTitle>
-        <CardText>{props.listItemText}</CardText>
-        {/* <Button onClick={(event)=> isOwner ? this.props.completionToggle(event) : null} data-key={this.props.id}>{this.props.completed ? 'Complete' : 'Incomplete'}</Button> */}
-          <button onClick={deleteCard}>Complete/Delete</button>
-      </CardBody>
-    </Card>
-  </div>
+    <div>
+    <Card className="card-item">
+    <CardImg top width="100%" src="../../static/images" alt="Card image cap" />
+    <CardBody>
+      <CardTitle>{props.listItemTitle}</CardTitle>
+      <CardText>{props.listItemText}</CardText>
+      {/* <Button onClick={(event)=> isOwner ? this.props.completionToggle(event) : null} data-key={this.props.id}>{this.props.completed ? 'Complete' : 'Incomplete'}</Button> */}
+        <button onClick={deleteCard}>Delete</button>
+    </CardBody>
+  </Card>
+</div>
   );}
 
 

@@ -84,16 +84,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navigation isLoggedIn={this.state.isLoggedIn} />
+        <Navigation user_id={this.state.user_id} />
 
         <Route
-          path="/"
+          exact path="/"
           render={props => (
             <Landing onLogin={this.onLogin} onRegister={this.onRegister} />
           )}
         />
 
-        <Route path="/" render={props => <LogOut {...props} />} />
         <Route exact path="/login" render={props => <LoginPage {...props} />} />
 
         <Route
