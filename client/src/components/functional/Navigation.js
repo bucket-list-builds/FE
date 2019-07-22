@@ -34,7 +34,7 @@ class Navigation extends Component {
     this.props.history.push('/login')
     setTimeout(() => {
       window.location.reload();
-    }, 0);
+    }, 100);
   }
 
   toggle = () => {
